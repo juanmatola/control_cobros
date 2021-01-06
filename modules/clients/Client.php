@@ -3,7 +3,6 @@
 require_once '../bd/Conection.php';
 
 
-
 class Client extends Conection {
     
     private $id;

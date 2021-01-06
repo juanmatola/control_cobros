@@ -47,12 +47,23 @@
         .success_alert{
             background-color: green;
         }
+        @media(max-width: 768px){
+            .form-titles p{
+                display: block;
+            }
+            form{
+                flex-direction: column;
+            }
+        }
     </style>
 </head>
 <body>
 
     <div class="d-flex justify-content-around align-items-center py-4">
-        <h3>Crear Nuevo Cliente</h3>
+        <div>
+            <h3>Crear Nuevo Cliente</h3>
+            <a href="/">← regresar</a>
+        </div>
         <img src="/assets/img/logo.png" class="img-fluid logo">
     </div>
 
