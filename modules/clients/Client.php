@@ -19,4 +19,16 @@ class Client extends Connection {
 
         return $this->query($sql);
     }
+
+    public function setId($id){
+        $this->id = $id;
+    }
+
+    public function delete(){
+        $this->connect();
+
+        $sql = 'DELETE FROM clientes WHERE clientes.id = '.$this->id;
+
+        return $this->query($sql);
+    }
 }
