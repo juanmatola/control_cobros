@@ -6,7 +6,7 @@ class Conection{
     private $bd = "control_cobros";
     private $user = 'root';
     private $pass = '';
-    public $conection;
+    private $conection;
 
     public function conect(){
         $this->conection = mysqli_connect( $this->server, $this->user, $this->pass, $this->bd) 
