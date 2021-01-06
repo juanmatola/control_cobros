@@ -1,6 +1,6 @@
 <?php
 
-require_once '../bd/Connection.php';
+require_once dirname(__DIR__).'/bd/Connection.php';
 
 
 class Client extends Connection {

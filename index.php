@@ -1,5 +1,5 @@
 <?php 
-    require_once './modules/clients/ClientsList.php';
+    require_once __DIR__.'/modules/clients/ClientsList.php';
     $list = new ClientsList();
     $data = $list->obtain();
 ?>
