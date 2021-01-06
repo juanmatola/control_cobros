@@ -1,7 +1,4 @@
 <?php
-
-    $save_status = false;
-
     if (isset($_POST['send_detect'])) {
        
         require_once './Client.php';

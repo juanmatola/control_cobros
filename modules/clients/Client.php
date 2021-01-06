@@ -18,6 +18,6 @@ class Client extends Conection {
 
         $sql = "INSERT INTO clientes (nombre, telefono, email, web, abono) VALUES ('$this->name','$this->phone','$this->email','$this->web','$this->suscription')";
 
-        return $this->execute($sql);
+        return $this->query($sql);
     }
 }

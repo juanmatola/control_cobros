@@ -13,7 +13,7 @@ class Conection{
                         or die ("No se ha podido conectar al servidor de Base de datos");
     }
 
-    public function execute($sql){
+    public function query($sql){
 
         if (mysqli_query($this->conection, $sql)) {
 
