@@ -1,9 +1,9 @@
 <?php
 
-require_once '../bd/Conection.php';
+require_once '../bd/Connection.php';
 
 
-class Client extends Conection {
+class Client extends Connection {
     
     private $id;
     public  $name;

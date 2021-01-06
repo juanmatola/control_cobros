@@ -1,3 +1,8 @@
+<?php 
+    require_once './modules/clients/ClientsList.php';
+    $list = new ClientsList();
+    $data = $list->obtain();
+?>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -40,16 +45,19 @@
             </tr>
         </thead>
         <tbody>
+        <?php foreach (array_reverse($data) as $client):?>
             <tr>
-                <th scope="row">TDR Construcciones</th>
-                <td>485 77854</td>
-                <td>contecto@tdrconstrucciones.com.ar</td>
-                <td>tdrconstrucciones.com.ar</td>
-                <td>Si</td>
+                <th scope="row"><?php echo $client['1']; ?></th>
+                <td><?php echo $client['2']; ?></td>
+                <td><?php echo $client['3']; ?></td>
+                <td><?php echo $client['4']; ?></td>
+                <td><?php echo $client['5']; ?></td>
             </tr>
+        <?php endforeach;?>    
         </tbody>
     </table>
-
+    
+    
     <!-- Bootstrap JS -->
     <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
 </body>

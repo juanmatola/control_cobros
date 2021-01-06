@@ -1,6 +1,6 @@
 <?php
 
-class Conection{
+class Connection{
 
     private $server = "localhost";
     private $bd = "control_cobros";
@@ -14,14 +14,7 @@ class Conection{
     }
 
     public function query($sql){
-
-        if (mysqli_query($this->connection, $sql)) {
-
-            return true;
-
-        }else{
-           return false;
-        }
+       return mysqli_query($this->connection, $sql);
     }
 
 }
