@@ -56,10 +56,17 @@
         <img src="/assets/img/logo.png" class="img-fluid logo">
     </div>
 
-    <?php if($save_status):?>
-        <div class="success_alert my-3 py-4 text-center text-light">
-            <h3>Cliente cargado correctamente</h3>
-        </div>
+    <?php if(isset($save_status)):?>    
+        <?php if($save_status):?>
+            <div class="success_alert my-3 py-4 text-center text-light">
+                <h3>Cliente cargado correctamente</h3>
+            </div>
+        <?php endif;?>
+        <?php if($save_status == false):?>
+            <div class="bg-danger my-3 py-4 text-center text-light">
+                <h3>Ups.. no fue posible cargar el nuevo cliente<h3>
+            </div>
+        <?php endif;?>
     <?php endif;?>
 
     <h5 class="text-left">Información de Nuevo Cliente</h5>

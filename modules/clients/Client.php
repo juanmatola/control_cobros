@@ -14,7 +14,7 @@ class Client extends Conection {
     public  $suscription;
 
     public function save(){
-        $this->conect();
+        $this->connect();
 
         $sql = "INSERT INTO clientes (nombre, telefono, email, web, abono) VALUES ('$this->name','$this->phone','$this->email','$this->web','$this->suscription')";
 
