@@ -3,7 +3,7 @@
 class Connection{
 
     private $server = "localhost";
-    private $bd = "control_cobros";
+    private $bd = "control_cobros_v2";
     private $user = 'root';
     private $pass = '';
     private $conection;
