@@ -1,7 +1,12 @@
 <?php 
     require_once __DIR__.'/modules/clients/ClientsList.php';
-    $list = new ClientsList();
-    $data = $list->obtain();
+    require_once __DIR__.'/modules/payment/category/AbonoList.php';
+
+    $clientList = new ClientsList();
+    $clientData = $clientList->obtain();
+
+    $abonoList = new AbonoList();
+    $abonoData = $abonoList->obtain();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -35,29 +40,64 @@
         <a href="./modules/payment/insert.php" class="btn btn-success" >+ Nuevo pago</a>
     </div>
 
-    <h5 class="text-left">Clientes Info</h5>
-    <table class="table table-bordered">
-        <thead class="thead-dark">
-            <tr>
-                <th scope="col">Nombre</th>
-                <th scope="col">Teléfono</th>
-                <th scope="col">E-mail</th>
-                <th scope="col">Web</th>
-                <th scope="col">Abono</th>
-            </tr>
-        </thead>
-        <tbody>
-        <?php foreach (array_reverse($data) as $client):?>
-            <tr>
-                <th scope="row"><?php echo $client['2']; ?></th>
-                <td><?php echo $client['3']; ?></td>
-                <td><?php echo $client['4']; ?></td>
-                <td><?php echo $client['5']; ?></td>
-                <td><?php echo $client['1']; ?></td>
-            </tr>
-        <?php endforeach;?>    
-        </tbody>
-    </table>
+    <div class="container-fluid">
+        <div class="row">
+
+            <div class="col-12 col-md-10">
+
+                <h5 class="text-left">Clientes Info</h5>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Nombre</th>
+                            <th scope="col">Teléfono</th>
+                            <th scope="col">E-mail</th>
+                            <th scope="col">Web</th>
+                            <th scope="col">Abono</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach (array_reverse($clientData) as $client):?>
+                        <tr>
+                            <th scope="row"><?php echo $client['2']; ?></th>
+                            <td><?php echo $client['3']; ?></td>
+                            <td><?php echo $client['4']; ?></td>
+                            <td><?php echo $client['5']; ?></td>
+                            <td><?php echo $client['1']; ?></td>
+                        </tr>
+                    <?php endforeach;?>    
+                    </tbody>
+                </table>
+
+            </div>
+
+            <div class="col-12 col-md-2">
+
+                <h5 class="text-left">Abonos Info</h5>
+                <table class="table table-bordered">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Id</th>
+                            <th scope="col">Monto</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    <?php foreach ($abonoData as $abono):?>
+                        <tr>
+                            <th scope="row"><?php echo $abono['0']; ?></th>
+                            <td>$ <?php echo $abono['2']; ?></td>
+                        </tr>
+                    <?php endforeach;?>    
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+    </div>
+
+    
+
+    
     
     
     <!-- Bootstrap JS -->
