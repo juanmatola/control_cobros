@@ -30,6 +30,8 @@
         <img src="./assets/img/logo.png" class="img-fluid logo">
         <a href="./modules/clients/create.php" class="btn btn-primary" >Nuevo cliente</a>
         <a href="./modules/clients/edit.php" class="btn btn-primary" >Editar cliente</a>
+        <a href="./modules/payment/category/create.php" class="btn btn-primary" >Nuevo abono</a>
+        <a href="./modules/payment/category/edit.php" class="btn btn-primary" >Editar abono</a>
         <a href="./modules/payment/insert.php" class="btn btn-success" >+ Nuevo pago</a>
     </div>
 

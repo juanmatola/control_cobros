@@ -57,7 +57,7 @@
         <?php endif;?>
     <?php endif;?>
 
-    <h5 class="text-left">Clientes Info</h5>
+    <h5 class="text-left">Abonos Info</h5>
     <table class="table table-bordered">
         <thead class="thead-dark">
             <tr>
