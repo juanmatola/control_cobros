@@ -1,4 +1,9 @@
 <?php
+    require_once dirname(__DIR__).'/payment/category/AbonoList.php';
+
+    $list = new AbonoList();
+    $data = $list->obtain();
+
     if (isset($_POST['send_detect'])) {
        
         require_once './Client.php';
@@ -8,7 +13,7 @@
         $new_client->phone = $_POST['phone']; 
         $new_client->email = $_POST['email']; 
         $new_client->web = $_POST['web']; 
-        $new_client->suscription = $_POST['suscription'];
+        $new_client->abono = $_POST['abono'];
         
         $save_status = $new_client->save();
     }
@@ -102,9 +107,15 @@
         </div>
         <div>
             <p>Suscripción</p>
-            <input type="text" name="suscription">
+            <select name="abono" class="w-100">
+                <?php foreach ($data as $client):?>
+
+                    <option value="<?php echo $client['0']; ?>"><?php echo $client['1']; ?></option>
+
+                <?php endforeach;?> 
+            </select>
         </div>
-        <button type="submit" class="btn btn-success">Guardar</button>
+        <button type="submit" class="btn btn-success my-3">Guardar</button>
     </form>
 
      <!-- Bootstrap JS -->

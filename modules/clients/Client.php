@@ -10,12 +10,12 @@ class Client extends Connection {
     public  $phone;
     public  $email;
     public  $web;
-    public  $suscription;
+    public  $abono;
 
     public function save(){
         $this->connect();
 
-        $sql = "INSERT INTO clientes (nombre, telefono, email, web, abono) VALUES ('$this->name','$this->phone','$this->email','$this->web','$this->suscription')";
+        $sql = "INSERT INTO clientes (abono_id, nombre, telefono, email, web) VALUES ($this->abono, '$this->name','$this->phone','$this->email','$this->web')";
 
         return $this->query($sql);
     }
