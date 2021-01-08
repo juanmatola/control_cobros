@@ -12,9 +12,12 @@
         $new_client->name = $_POST['name'];
         $new_client->phone = $_POST['phone']; 
         $new_client->email = $_POST['email']; 
-        $new_client->web = $_POST['web']; 
-        $new_client->abono = $_POST['abono'];
-        
+        $new_client->web = $_POST['web'];
+        if ($_POST['abono'] == "null") {
+            $new_client->abono = NULL;
+        }else {
+            $new_client->abono = $_POST['abono'];
+        }
         $save_status = $new_client->save();
     }
 ?>
@@ -108,6 +111,9 @@
         <div>
             <p>Suscripción</p>
             <select name="abono" class="w-100">
+
+                <option value="null">--Sin Abono--</option>
+
                 <?php foreach ($data as $client):?>
 
                     <option value="<?php echo $client['0']; ?>"><?php echo $client['1']; ?></option>

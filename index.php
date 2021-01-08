@@ -53,7 +53,7 @@
                 <td><?php echo $client['3']; ?></td>
                 <td><?php echo $client['4']; ?></td>
                 <td><?php echo $client['5']; ?></td>
-                <td><?php echo $client['0']; ?></td>
+                <td><?php echo $client['1']; ?></td>
             </tr>
         <?php endforeach;?>    
         </tbody>

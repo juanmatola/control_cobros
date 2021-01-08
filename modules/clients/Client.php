@@ -15,8 +15,11 @@ class Client extends Connection {
     public function save(){
         $this->connect();
 
-        $sql = "INSERT INTO clientes (abono_id, nombre, telefono, email, web) VALUES ($this->abono, '$this->name','$this->phone','$this->email','$this->web')";
-
+        if (is_null($this->abono)) {
+            $sql = "INSERT INTO clientes (nombre, telefono, email, web) VALUES ('$this->name','$this->phone','$this->email','$this->web')";
+        }else {
+            $sql = "INSERT INTO clientes (abono_id, nombre, telefono, email, web) VALUES ($this->abono, '$this->name','$this->phone','$this->email','$this->web')";
+        }
         return $this->query($sql);
     }
 
